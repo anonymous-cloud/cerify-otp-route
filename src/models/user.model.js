@@ -1,17 +1,18 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const User = new mongoose.Schema({
-    phoneNumber : {
-        type : String,
-        required : true,
-        unique : true
+const userSchema = new mongoose.Schema(
+  {
+    phoneNumber: {
+      type: String,
+      required: true,
+      unique: true
     },
-     isVerified: {
+    isVerified: {
       type: Boolean,
       default: false
     }
-},
-{ timestamps: true }
-)
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("User", userSchema);
